@@ -1,0 +1,40 @@
+/* Base skeleton style */
+.skeleton {
+  background: linear-gradient(90deg, #eeeeee 25%, #dddddd 50%, #eeeeee 75%) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 1.5s infinite !important;
+  border-radius: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Specific skeleton shapes */
+.skeleton-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.skeleton-text {
+  height: 12px;
+  width: 100%;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+/* Wrapper for layout */
+.skeleton-wrapper {
+  max-width: 300px;
+  padding: 20px;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

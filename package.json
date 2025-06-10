@@ -1,0 +1,19 @@
+{
+  "name": "skeletonize",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0-beta.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

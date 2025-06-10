@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/base.css" />
+    <link rel="stylesheet" href="src/skeleton.css" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="original-content">
+        <div
+          class="product-grid swiper swiper-initialized swiper-horizontal swiper-backface-hidden"
+        >
+          <div
+            class="swiper-wrapper"
+            id="swiper-wrapper-448eef7895ed5e57"
+            aria-live="polite"
+          >
+            <div
+              class="product-card swiper-slide swiper-slide-active"
+              style="
+                --ns-img: url(https://cdn.shopify.com/s/files/1/0602/6874/0822/products/2015-07-08_Laydown_51242_24398_200x200.jpg?v=1655292667);
+                --ns-alt-img: url();
+                width: 320px;
+                margin-right: 10px;
+              "
+              role="group"
+              aria-label="1 / 2"
+            >
+              <div class="product-ribbon">TOP</div>
+
+              <a
+                class="product-link"
+                href="https://maninostoprod.myshopify.com/products/donna-low-top"
+                alt="Donna Low Top"
+              >
+                <div class="product-img">&nbsp;</div>
+                <div class="product-brand">Philippe Model</div>
+                <div class="product-name">Donna Low Top</div>
+
+                <div class="product-price money">EUR 328.00</div>
+              </a>
+            </div>
+            <div
+              class="product-card swiper-slide swiper-slide-next"
+              style="
+                --ns-img: url(https://cdn.shopify.com/s/files/1/0602/6874/0822/products/2015-02-26_Ashley_Look_28_20557_7133_200x200.jpg?v=1655287379);
+                --ns-alt-img: url();
+                width: 320px;
+                margin-right: 10px;
+              "
+              role="group"
+              aria-label="2 / 2"
+            >
+              <a
+                class="product-link"
+                href="https://maninostoprod.myshopify.com/products/a-line-jacket-in-black"
+                alt="A-Line Jacket"
+              >
+                <div class="product-img">&nbsp;</div>
+                <div class="product-brand">Co</div>
+                <div class="product-name">A-Line Jacket</div>
+
+                <div class="product-price money">EUR 698.60</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="skeleton-content">
+        
+      </div>
+    </div>
+  </body>
+  <script type="module">
+    import { skeletonize } from "./src/main.ts";
+    (function () {
+      skeletonize("#original-content", "#skeleton-content");
+    })();
+  </script>
+</html>
