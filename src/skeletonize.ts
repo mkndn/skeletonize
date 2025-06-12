@@ -6,10 +6,10 @@ export default function skeletonize(selector: string, target: string) {
     throw new Error(`No element found for selector ${selector}`);
   }
 
-  const source = element.cloneNode(true) as HTMLElement
+  const source = element.firstElementChild!.cloneNode(true) as HTMLElement;
 
-  targetElement.style.display = "mone"
-  targetElement.appendChild(source)
+  // targetElement.style.display = "none"
+  targetElement.appendChild(source);
 
   getImageElements(targetElement);
 
@@ -43,21 +43,15 @@ export default function skeletonize(selector: string, target: string) {
       // Detect background images
       const bgImage = style.backgroundImage;
       if (bgImage && bgImage !== "none") {
-        const { width, height } = style;
-        el.style.backgroundImage = "none";
-        el.style.width = width;
-        el.style.height = height;
         if (el.children.length === 0) {
           el.classList.add("skeleton");
         }
         continue;
       }
 
+      // Detect background usages
       const background = style.background;
       if (background && background !== "none") {
-        const { width, height } = style;
-        el.style.width = width;
-        el.style.height = height;
         if (el.children.length === 0) {
           el.classList.add("skeleton");
         }
@@ -69,11 +63,7 @@ export default function skeletonize(selector: string, target: string) {
         const pseudoStyle = window.getComputedStyle(el, pseudo);
         const content = pseudoStyle.content;
         if (content && content.includes("url(")) {
-          const { width, height } = pseudoStyle;
           el.style.content = "";
-          el.style.width = width;
-          el.style.height = height;
-          //el.classList.remove(...el.classList)
           if (el.children.length === 0) {
             el.classList.add("skeleton");
           }
@@ -81,6 +71,6 @@ export default function skeletonize(selector: string, target: string) {
       }
     }
 
-    element.style.display = "block"
+    element.style.display = "flex";
   }
 }
