@@ -25,7 +25,8 @@
 
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-auto-flow: column;
 
     .product-card {
       position: relative;
@@ -39,6 +40,8 @@
     }
 
     .product-img {
+      display: flex;
+      justify-content: center;
       background-image: var(--ns-img);
       background-size: contain;
       background-position: center;
@@ -49,6 +52,14 @@
       &[altimg]:hover {
         background-image: var(--ns-alt-img);
       }
+    }
+
+    .product-img-static {
+      display: flex;
+      justify-content: center;
+      width: var(--image-size);
+      height: var(--image-size);
+      justify-content: center;
     }
 
     .product-ribbon {

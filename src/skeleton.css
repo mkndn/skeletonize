@@ -1,8 +1,8 @@
 /* Base skeleton style */
 .skeleton {
   animation: shimmer 2s linear infinite !important;
-  background-color: rgb(240, 240, 240) !important; 
-  background-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 10%) 25%, transparent 50%) !important;
+  background-color: rgba(183, 183, 183, 0.82) !important;
+  background-image: linear-gradient(to right, #fff0 0%, rgba(255, 255, 255, 0.2) 25%, #d0d0d000 50%) !important;
   background-size: 200% 100% !important;
   border-radius: 4px !important;
   margin-bottom: 10px !important;

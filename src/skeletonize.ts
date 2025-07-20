@@ -8,7 +8,6 @@ export default function skeletonize(selector: string, target: string) {
 
   const source = element.firstElementChild!.cloneNode(true) as HTMLElement;
 
-  // targetElement.style.display = "none"
   targetElement.appendChild(source);
 
   getImageElements(targetElement);
@@ -34,11 +33,21 @@ export default function skeletonize(selector: string, target: string) {
           el.style.width = width;
           el.style.height = height;
           textNode.nodeValue = "";
-          //el.classList.remove(...el.classList)
           if (el.children.length === 0) {
             el.classList.add("skeleton");
           }
         });
+
+      if (el.tagName.toLowerCase() === "img") {
+        const { width, height } = el.parentElement ? getComputedStyle(el.parentElement) : getComputedStyle(el)
+        const replacement = document.createElement("div")
+        replacement.style.width = width
+        replacement.style.height = height
+        el.insertAdjacentElement("afterend", replacement)
+        el.style.display = "none"
+        replacement.classList.add("img-replacement")
+        replacement.classList.add("skeleton")
+      }
 
       // Detect background images
       const bgImage = style.backgroundImage;
